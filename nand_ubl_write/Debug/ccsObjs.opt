@@ -1,0 +1,1 @@
+"./sources/util.obj" "./sources/nandwriter.obj" "./sources/nand.obj" "./sources/device_nand.obj" "./sources/device.obj" "./sources/debug.obj" "../NANDWriter.cmd" -l"libc.a" 

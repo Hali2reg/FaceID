@@ -1,0 +1,19 @@
+2017/2/21
+1.  nandwrite.c line-425 ，DEBUG_printString() 变量类型，由Uint8 改为 Int8.之前不匹配。
+2.  nandwrite.c ，添加debug，string，stdlib头文件，分别对应函数 DEBUG_printString，strcpy，strtoul。
+
+2017/2/22
+1.  NAND读写函数不能正常工作，调整LOCAL_flashWriteData（），LOCAL_flashReadData（）。
+2.  强制转换devicewidth为8bit。
+3.  成功烧录 UBL，U-Boot。
+
+2017/2/24
+1.  修改LOCAL_writeHeaderAndData（）函数，在写Flash时，输入地址的次序不对。
+
+2017/2/26
+1.  添加command指令，当需要跳过相应烧写时，输入none即可。烧写则输入除此以外的指令，如yes。文件的路径已经包含在代码里，只需要修改文件名，放在目录下即可。
+2.  u-boot header是否正确，还需要再次确认。
+3.  通过检查，ubl已经搬进DRAM中，地址为0x10020.
+
+2017/2/27
+该代码可正常使用

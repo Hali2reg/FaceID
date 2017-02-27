@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configurations XML_version="1.2" id="configurations_0">
+    <configuration XML_version="1.2" id="configuration_0">
+        <instance XML_version="1.2" desc="Blackhawk USB560 Emulator, 20-pin JTAG Cable" href="connections/BH-USB560_20pin_Connection.xml" id="Blackhawk USB560 Emulator, 20-pin JTAG Cable" xml="BH-USB560_20pin_Connection.xml" xmlpath="connections"/>
+        <connection XML_version="1.2" id="Blackhawk USB560 Emulator, 20-pin JTAG Cable">
+            <instance XML_version="1.2" href="drivers/tixds560icepick_c.xml" id="drivers" xml="tixds560icepick_c.xml" xmlpath="drivers"/>
+            <instance XML_version="1.2" href="drivers/tixds560arm9.xml" id="drivers" xml="tixds560arm9.xml" xmlpath="drivers"/>
+            <instance XML_version="1.2" href="drivers/tixds560etb11.xml" id="drivers" xml="tixds560etb11.xml" xmlpath="drivers"/>
+            <platform XML_version="1.2" id="platform_0">
+                <instance XML_version="1.2" desc="TMS320DM368" href="devices/DM368.xml" id="TMS320DM368" xml="DM368.xml" xmlpath="devices"/>
+            <device HW_revision="1" XML_version="1.2" description="DaVinci ARM9-only device" id="TMS320DM368" partnum="TMS320DM368" simulation="no">
+                    <router HW_revision="1.0" XML_version="1.2" description="ICEPick_C Router" id="IcePick_C_0" isa="ICEPICK_C">
+                        <subpath id="subpath_0">
+                            <cpu HW_revision="" XML_version="1.2" description="" deviceSim="false" id="device_2" isa="ARM9">
+                                <property Type="filepathfield" Value="..\gel\dm368.gel" id="GEL File"/>
+                            </cpu>
+                        <property Type="choicelist" Value="0" id="Initial Configuration"/>
+                            <property Type="choicelist" Value="0" id="Custom Configuration"/>
+                        </subpath>
+                    </router>
+                </device>
+            </platform>
+        </connection>
+    </configuration>
+</configurations>
