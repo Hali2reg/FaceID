@@ -1,0 +1,278 @@
+******************************************************************************
+                  TI ARM Linker PC v5.1.1                      
+******************************************************************************
+>> Linked Sun Mar 19 15:23:23 2017
+
+OUTPUT FILE NAME:   <cmos_capture_ram.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 8e001854
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  ARM_IRAM0             00000000   00004000  00000000  00004000  RWIX
+  ARM_IRAM1             00004000   00004000  00000000  00004000  RWIX
+  ARM_IROM              00008000   00004000  00000000  00004000  RWIX
+  ARM_DRAM0             00010000   00004000  00000000  00004000  RWIX
+  ARM_DRAM1             00014000   00004000  00000000  00004000  RWIX
+  ARM_DROM              00018000   00004000  00000000  00004000  RWIX
+  ARM_METB              01bc0000   00001000  00000000  00001000  RWIX
+  ARM_RETB              01bc1000   00000800  00000000  00000800  RWIX
+  ARM_ICECRSH           01bc1800   00000100  00000000  00000100  RWIX
+  ARM_CFGBUS            01c00000   00400000  00000000  00400000  RWIX
+  ARM_DAEMIF            02000000   08000000  00000000  08000000  RWIX
+  ARM_MJCPD             11f00000   00020000  00000000  00020000  RWIX
+  ARM_HDVICPD           12000000   00080000  00000000  00080000  RWIX
+  ARM_RDDR              20000000   00008000  00000000  00008000  RWIX
+  ARM_DDR               8e000000   01000000  000029f8  00ffd608  RWIX
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+8e000000    8e000000    00001930   00001930    r-x
+  8e000000    8e000000    00001930   00001930    r-x .text
+8e001930    8e001930    00001000   00000000    rw-
+  8e001930    8e001930    00000800   00000000    rw- .stack
+  8e002130    8e002130    00000800   00000000    rw- .sysmem
+8e002930    8e002930    00000088   00000088    r--
+  8e002930    8e002930    00000088   00000088    r-- .const
+8e0029b8    8e0029b8    00000018   00000000    rw-
+  8e0029b8    8e0029b8    00000018   00000000    rw- .data
+8e0029d0    8e0029d0    00000028   00000028    r--
+  8e0029d0    8e0029d0    00000028   00000028    r-- .cinit
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.init_array 
+*          0    8e000000    00000000     UNINITIALIZED
+
+.text      0    8e000000    00001930     
+                  8e000000    000006a0     dm368.obj (.text)
+                  8e0006a0    00000604     ov7725.obj (.text)
+                  8e000ca4    00000394     dm368_i2c.obj (.text)
+                  8e001038    00000254     dm368_gpio.obj (.text)
+                  8e00128c    00000180     rtsv5_A_le_eabi.lib : memcpy32.obj (.text)
+                  8e00140c    00000130     isif.obj (.text)
+                  8e00153c    000000d4     rtsv5_A_le_eabi.lib : auto_init.obj (.text)
+                  8e001610    000000b0                         : memset32.obj (.text)
+                  8e0016c0    00000098                         : copy_decompress_rle.obj (.text)
+                  8e001758    00000084                         : cpy_tbl.obj (.text)
+                  8e0017dc    00000078                         : exit.obj (.text)
+                  8e001854    00000048                         : boot.obj (.text)
+                  8e00189c    00000034     main.obj (.text)
+                  8e0018d0    00000024     rtsv5_A_le_eabi.lib : _lock.obj (.text)
+                  8e0018f4    00000020                         : args_main.obj (.text)
+                  8e001914    00000014                         : copy_decompress_none.obj (.text:decompress:none)
+                  8e001928    00000008                         : copy_decompress_rle.obj (.text:decompress:rle24)
+
+.stack     0    8e001930    00000800     UNINITIALIZED
+                  8e001930    00000800     --HOLE--
+
+.sysmem    0    8e002130    00000800     UNINITIALIZED
+                  8e002130    00000008     rtsv5_A_le_eabi.lib : memory.obj (.sysmem)
+                  8e002138    000007f8     --HOLE--
+
+.const     0    8e002930    00000088     
+                  8e002930    00000088     ov7725.obj (.const:reg_cfg_ycbcr)
+
+.data      0    8e0029b8    00000018     UNINITIALIZED
+                  8e0029b8    00000008     rtsv5_A_le_eabi.lib : _lock.obj (.data)
+                  8e0029c0    00000008                         : exit.obj (.data)
+                  8e0029c8    00000004     dm368_i2c.obj (.data)
+                  8e0029cc    00000004     rtsv5_A_le_eabi.lib : stkdepth_vars.obj (.data)
+
+.cinit     0    8e0029d0    00000028     
+                  8e0029d0    00000015     (.cinit..data.load) [load image, compression = rle]
+                  8e0029e5    00000003     --HOLE-- [fill = 0]
+                  8e0029e8    00000008     (__TI_handler_table)
+                  8e0029f0    00000008     (__TI_cinit_table)
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 8e0029f0 records: 1, size/record: 8, table size: 8
+	.data: load addr=8e0029d0, load size=00000015 bytes, run addr=8e0029b8, run size=00000018 bytes, compression=rle
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 8e0029e8 records: 2, size/record: 4, table size: 8
+	index: 0, handler: __TI_decompress_rle24
+	index: 1, handler: __TI_decompress_none
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address    name
+--------   ----
+8e0017dc   C$$EXIT
+UNDEFED    SHT$$INIT_ARRAY$$Base
+UNDEFED    SHT$$INIT_ARRAY$$Limit
+8e002130   __STACK_END
+00000800   __STACK_SIZE
+00000800   __SYSMEM_SIZE
+8e0029f0   __TI_CINIT_Base
+8e0029f8   __TI_CINIT_Limit
+8e0029e8   __TI_Handler_Table_Base
+8e0029f0   __TI_Handler_Table_Limit
+00000001   __TI_args_main
+8e00153c   __TI_auto_init
+8e0029c0   __TI_cleanup_ptr
+8e001914   __TI_decompress_none
+8e001928   __TI_decompress_rle24
+8e0029c4   __TI_dtors_ptr
+8e0029d0   __TI_static_base__
+8e001610   __aeabi_memclr
+8e001610   __aeabi_memclr4
+8e001610   __aeabi_memclr8
+8e00128c   __aeabi_memcpy
+8e00128c   __aeabi_memcpy4
+8e00128c   __aeabi_memcpy8
+8e001614   __aeabi_memset
+8e001614   __aeabi_memset4
+8e001614   __aeabi_memset8
+ffffffff   __binit__
+ffffffff   __c_args__
+8e001930   __stack
+8e0018f4   _args_main
+8e001854   _c_int00
+8e0029b8   _lock
+8e0018e8   _nop
+8e0018dc   _register_lock
+8e0018d0   _register_unlock
+8e002130   _sys_memory
+8e0029bc   _unlock
+8e0017e4   abort
+ffffffff   binit
+8e00070c   camera_reset
+8e001758   copy_in
+8e0011c8   dm368_gpio_getInput
+8e001038   dm368_gpio_init
+8e0010b8   dm368_gpio_setDirection
+8e001140   dm368_gpio_setOutput
+8e000cec   dm368_i2c_close
+8e000ca4   dm368_i2c_init
+8e000e0c   dm368_i2c_read
+8e000f04   dm368_i2c_read_variable
+8e000d00   dm368_i2c_reset
+8e000d14   dm368_i2c_write
+8e0003b4   dm368_init
+8e00122c   dm368_led_off
+8e001254   dm368_led_on
+8e000000   dm368_wait
+8e00004c   dm368_waitusec
+8e0017f0   exit
+8e0014d0   face_detection_init
+8e0029c8   i2c_timeout
+8e00140c   isif_init
+8e00049c   led_shining
+8e00189c   main
+8e0029cc   main_func_sp
+8e00128c   memcpy
+8e001620   memset
+8e0009a0   ov7725_brightness
+8e0008cc   ov7725_color_saturation
+8e000a4c   ov7725_contrast
+8e0006a0   ov7725_init
+8e0007ec   ov7725_light_mode
+8e000bec   ov7725_reg_init
+8e000ac4   ov7725_special_effects
+8e000068   pin_mux_cfg
+8e0000b8   pll1_cfg
+8e000260   pll2_cfg
+8e000524   pwm_output
+8e000734   sccb_read_reg
+8e00079c   sccb_write_reg
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address    name
+--------   ----
+00000001   __TI_args_main
+00000800   __STACK_SIZE
+00000800   __SYSMEM_SIZE
+8e000000   dm368_wait
+8e00004c   dm368_waitusec
+8e000068   pin_mux_cfg
+8e0000b8   pll1_cfg
+8e000260   pll2_cfg
+8e0003b4   dm368_init
+8e00049c   led_shining
+8e000524   pwm_output
+8e0006a0   ov7725_init
+8e00070c   camera_reset
+8e000734   sccb_read_reg
+8e00079c   sccb_write_reg
+8e0007ec   ov7725_light_mode
+8e0008cc   ov7725_color_saturation
+8e0009a0   ov7725_brightness
+8e000a4c   ov7725_contrast
+8e000ac4   ov7725_special_effects
+8e000bec   ov7725_reg_init
+8e000ca4   dm368_i2c_init
+8e000cec   dm368_i2c_close
+8e000d00   dm368_i2c_reset
+8e000d14   dm368_i2c_write
+8e000e0c   dm368_i2c_read
+8e000f04   dm368_i2c_read_variable
+8e001038   dm368_gpio_init
+8e0010b8   dm368_gpio_setDirection
+8e001140   dm368_gpio_setOutput
+8e0011c8   dm368_gpio_getInput
+8e00122c   dm368_led_off
+8e001254   dm368_led_on
+8e00128c   __aeabi_memcpy
+8e00128c   __aeabi_memcpy4
+8e00128c   __aeabi_memcpy8
+8e00128c   memcpy
+8e00140c   isif_init
+8e0014d0   face_detection_init
+8e00153c   __TI_auto_init
+8e001610   __aeabi_memclr
+8e001610   __aeabi_memclr4
+8e001610   __aeabi_memclr8
+8e001614   __aeabi_memset
+8e001614   __aeabi_memset4
+8e001614   __aeabi_memset8
+8e001620   memset
+8e001758   copy_in
+8e0017dc   C$$EXIT
+8e0017e4   abort
+8e0017f0   exit
+8e001854   _c_int00
+8e00189c   main
+8e0018d0   _register_unlock
+8e0018dc   _register_lock
+8e0018e8   _nop
+8e0018f4   _args_main
+8e001914   __TI_decompress_none
+8e001928   __TI_decompress_rle24
+8e001930   __stack
+8e002130   __STACK_END
+8e002130   _sys_memory
+8e0029b8   _lock
+8e0029bc   _unlock
+8e0029c0   __TI_cleanup_ptr
+8e0029c4   __TI_dtors_ptr
+8e0029c8   i2c_timeout
+8e0029cc   main_func_sp
+8e0029d0   __TI_static_base__
+8e0029e8   __TI_Handler_Table_Base
+8e0029f0   __TI_CINIT_Base
+8e0029f0   __TI_Handler_Table_Limit
+8e0029f8   __TI_CINIT_Limit
+ffffffff   __binit__
+ffffffff   __c_args__
+ffffffff   binit
+UNDEFED    SHT$$INIT_ARRAY$$Base
+UNDEFED    SHT$$INIT_ARRAY$$Limit
+
+[78 symbols]
